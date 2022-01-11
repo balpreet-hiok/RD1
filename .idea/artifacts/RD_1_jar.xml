@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RD-1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RD_1_jar</output-path>
+    <root id="archive" name="RD-1.jar">
+      <element id="module-output" name="RD-1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/org/bstechnologies/rd1/dependencies/json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
