@@ -18,7 +18,7 @@ System.out.println(dec);
 Don't worry, I will soon add a program which makes new keys on own
 
 # v1.0
-This release brings a KeyGenerator file which allows you to create unique alg files which are the secret of your encryption. If anyone gets this alg fil, he will be able to decrypt your messages. To use KeyGenerator, use:-
+This release brings a KeyGenerator file which allows you to create unique alg files which are the secret of your encryption. If anyone gets this alg file, he will be able to decrypt your messages. To use KeyGenerator, use:-
 
 ```
 KeyGenerator keygen = new KeyGenerator(ls,alg);
