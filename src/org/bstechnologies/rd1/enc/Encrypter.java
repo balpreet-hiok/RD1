@@ -13,19 +13,15 @@ public class Encrypter {
 
     }
 
-    private String[] alg() throws EncException {
+    public String[] alg() throws EncException {
         String alg1 = reader.getAlg();
         String[] out = {};
         out = Arrays.copyOf(out, alg1.length() / 2);
         int in = 0;
-        int in$ = 2;
-        for (int i = 0; i < alg1.length() / 2; i++) {
+        for (int i = 0; i < alg1.length() / 2; i++,in+=2) {
             String temp = alg1;
-            temp = temp.replace(temp.substring(in$), "");
-            temp = temp.substring(in);
+            temp = temp.substring(in, in + 2);
             out[i] = temp;
-            in += 2;
-            in$ += 2;
         }
         return out;
     }

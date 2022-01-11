@@ -39,7 +39,7 @@ public class Reader {
         String src$n = (String) json.get(src);
         if(src$n == null)
         {
-            throw new EncException("Invalid Source Code");
+            throw new EncException("Invalid Source Code ");
         }
         if(in.equals(" "))
         {
@@ -62,5 +62,9 @@ public class Reader {
             throw new EncException("ls not found in alg");
         }
         return ls;
+    }
+    public String get(String msg)
+    {
+        return (String)json.get(msg);
     }
 }
