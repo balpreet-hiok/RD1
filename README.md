@@ -2,7 +2,7 @@
 RD1 is an encryption. Made by Balpreet
 
 # Usage
-1. Add the jar file to libraries
+1. Add the jar file in out / artifacts / RD_1_jar to libraries
 2. Follow the code
 
 ```

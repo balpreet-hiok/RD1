@@ -23,13 +23,4 @@ public class RD1 {
 
     }
 
-    public static void main(String[] args) throws EncException {
-       RD1 rd1 = new RD1("src/org/bstechnologies/rd1/alg/alg.json");
-
-       String enc = rd1.encrypt("Balpreet Singh is a good boy");
-        System.out.println(enc);
-        rd1.format();
-        System.out.println(rd1.decrypt(enc));
-
-    }
 }
