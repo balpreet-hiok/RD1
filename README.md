@@ -1,5 +1,5 @@
 # RD1
-RD1 is an encryption. Made by Balpreet
+RD1, Java Encryption Project. Made by Balpreet
 
 # Usage
 1. Add the jar file in out / artifacts / RD_1_jar to libraries
