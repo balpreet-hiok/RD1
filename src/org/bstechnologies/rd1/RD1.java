@@ -28,11 +28,4 @@ public class RD1 {
 
     }
 
-    public static void main(String[] args) throws Exception {
-        KeyGenerator keygen = new KeyGenerator(4,5);
-//        keygen.genKey("src/org/bstechnologies/rd1/alg/test.json");
-        String msg = "Balpreet Singh";
-        System.out.println(new RD1("src/org/bstechnologies/rd1/alg/test.json").encrypt(msg));
-        System.out.println(new RD1("src/org/bstechnologies/rd1/alg/test.json").decrypt("56282z41e2TR74W2jk411c0856OOy8566wVW41tZqT7472Dc410110564W7N564h6041242W742tot415u8q"));
-    }
 }
