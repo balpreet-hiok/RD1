@@ -37,3 +37,13 @@ You can repeat same table again but overall legnth should not be less the legnth
 You can make like `39413974`
 Or you just enter how long you want while defining `KeyGenerator` in `alg` variable.
 Note `alg` must be greater than equal to `ls`
+
+# Version 2.0
+
+This update brings the encryption a feature of converting your secret alg files to key files. Now defining the path is optional when initializing the RD1 class. This means you can leave `RD1 rd1 = new RD1();` when you want to generate a new key file. But you will not be able to encrypt or decrypt messages. For that you need to define path like `RD1 rd1 = new RD1(path);` So that you can Encrypt or Decrypt.
+Now `rd1.genKey();` has two optional parameters. You can use any of that like `rd1.genKey(ls,out);` or `rd1.genKey(ls,alg,out);` If you don't initialize alg in above command, default will be `ls+1`. If you initialize path `RD1 rd1 = new RD1(path);` `path` must be path of key file not json file. Don't worry, if you want to convert your alg file to key file, follow the code :-
+```
+KeyGenerator keygen = new KeyGenerator();
+keygen.keytoalg(path,out);   //path is where is youor alg file and out is where you want to store key file
+```
+Thats it!
