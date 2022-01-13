@@ -2,15 +2,20 @@ package org.bstechnologies.rd1.enc;
 
 import org.bstechnologies.rd1.io.EncException;
 import org.bstechnologies.rd1.io.Reader;
+import org.json.simple.JSONObject;
 
 import java.util.Arrays;
 
 public class Encrypter {
     Reader reader;
-
+    JSONObject json;
     public Encrypter(String path) {
-        reader = new Reader(path);
+        this.reader = new Reader(path);
 
+    }
+    public Encrypter(JSONObject json)
+    {
+       this.reader=new Reader(json);
     }
 
     public String[] alg() throws EncException {

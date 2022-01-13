@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.Set;
 
 public class FrmtAlg {
-
+    JSONObject json;
     public FrmtAlg(String path) throws EncException {
 
      try{
@@ -56,6 +56,33 @@ public class FrmtAlg {
 
 
     }
+    public  FrmtAlg(JSONObject json)
+    {
+
+            try{
+                String [] list = new Encrypter(json).ls();
+                JSONObject out = new JSONObject();
+
+                for(int i=0;i<list.length;i++)
+                {
+                    String a = (String) json.get(list[i]);
+                    JSONArray arr = (JSONArray)json.get(a);
+                    JSONObject temp = (JSONObject)arr.get(0);
+                    temp = format(temp);
+                    JSONArray array = new JSONArray();
+                    array.add(temp);
+                    json.put(a,array);
+
+                }
+                json.put("frmtd","true");
+                this.json=json;
+
+            } catch (EncException e) {
+                e.printStackTrace();
+            }
+
+    }
+
 private JSONObject format(JSONObject json){
         Set keys = json.keySet();
         String [] ls = new String[keys.size()];
@@ -65,5 +92,9 @@ private JSONObject format(JSONObject json){
           json.put(temp,ls[i]);
         }
         return json;
+}
+public JSONObject getJSON()
+{
+    return this.json;
 }
 }

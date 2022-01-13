@@ -26,6 +26,10 @@ public class Reader {
             System.out.println("Exception caught in IO");
         }
     }
+    public Reader(JSONObject json)
+    {
+        this.json=json;
+    }
     public String getAlg() throws EncException {
         String str = (String) json.get("alg");
         if(str == null)

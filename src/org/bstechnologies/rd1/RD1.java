@@ -3,19 +3,18 @@ package org.bstechnologies.rd1;
 import org.bstechnologies.rd1.alg.FrmtAlg;
 import org.bstechnologies.rd1.enc.Encrypter;
 import org.bstechnologies.rd1.io.EncException;
-import org.bstechnologies.rd1.io.Reader;
 import org.bstechnologies.rd1.keys.KeyGenerator;
 import org.json.simple.JSONObject;
-
-import java.io.FileWriter;
-
 public class RD1 {
     Encrypter enc;
     String path;
-    public RD1(String path)
-    {
-        enc = new Encrypter(path);
-        this.path = path;
+    public RD1()
+    {}
+    public RD1(String path) throws Exception {
+        KeyGenerator keygen = new KeyGenerator();
+        JSONObject json = keygen.keytoalg(path);
+        this.enc=new Encrypter(json);
+        this.path=path;
     }
     public String encrypt(String msg) throws EncException {
         return enc.encrypt(msg);
@@ -27,5 +26,18 @@ public class RD1 {
         return enc.decrypt(encryption);
 
     }
+    public void genKey(int ls,int alg,String out) throws Exception {
+        JSONObject json = new JSONObject();
+        KeyGenerator keygen = new KeyGenerator(ls,alg);
+        json = keygen.genKey(json);
+        keygen.algtokey(json,out);
 
+    }
+    public void genKey(int ls,String out) throws Exception {
+        KeyGenerator keygen = new KeyGenerator(4,5);
+        JSONObject json = new JSONObject();
+        json = keygen.genKey(json);
+        keygen.algtokey(json,out);
+
+    }
 }
