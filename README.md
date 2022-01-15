@@ -47,3 +47,28 @@ KeyGenerator keygen = new KeyGenerator();
 keygen.keytoalg(path,out);   //path is where is youor alg file and out is where you want to store key file
 ```
 Thats it!
+
+# v2.1
+
+This update is not a big update but a quit useful one.
+In this update, You can now encrypt or decrypt numbers and signs listed below:-
+```
+1234567890`~!@#$%^&*()_-+={[}]|\:;"'<,>.?/
+```
+
+Now while generating key file, you only need to specify the output file, not `ls` not `alg` because
+some value possibilities of `ls` and `alg` were giving errors.
+Before :-
+```
+RD1 rd1 = new RD1();
+rd1.genKey(4,5,"output.key");  // 4 is ls and 5 is keytoalg
+
+// OR 
+rd1.genKey(4,"output.key"); // 4 is ls and alg default is ls+1
+```
+
+Now :-
+``` 
+RD1 rd1 = new RD1();
+rd1.genKey("output.key"); // default ls is 15 and default alg is 20, you can't change that until you do all manually 
+```

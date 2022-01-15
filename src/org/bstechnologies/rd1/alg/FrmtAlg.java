@@ -41,11 +41,6 @@ public class FrmtAlg {
         FileWriter fw = new FileWriter(path);
         fw.write(json.toJSONString());
         fw.close();
-//         JSONArray array = (JSONArray)json.get("AN");
-//         JSONObject json$ = (JSONObject)array.get(0);
-//         Set keys = json$.keySet();
-//         String [] ls = new String[keys.size()];
-//         keys.toArray(ls);
      }catch(IOException e)
      {
 

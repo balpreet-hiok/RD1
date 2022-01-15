@@ -26,18 +26,12 @@ public class RD1 {
         return enc.decrypt(encryption);
 
     }
-    public void genKey(int ls,int alg,String out) throws Exception {
+    public void genKey(String out) throws Exception {
         JSONObject json = new JSONObject();
-        KeyGenerator keygen = new KeyGenerator(ls,alg);
+        KeyGenerator keygen = new KeyGenerator(15,20);
         json = keygen.genKey(json);
         keygen.algtokey(json,out);
 
     }
-    public void genKey(int ls,String out) throws Exception {
-        KeyGenerator keygen = new KeyGenerator(4,5);
-        JSONObject json = new JSONObject();
-        json = keygen.genKey(json);
-        keygen.algtokey(json,out);
 
-    }
 }
